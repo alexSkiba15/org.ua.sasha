@@ -1,6 +1,8 @@
-class ArrayProd {
+package alex;
 
-    static int mul(int[] c) {
+public class ArrayProd {
+
+    public static int mul(int[] c) {
         if (c == null) {
             throw new NullPointerException();
         }

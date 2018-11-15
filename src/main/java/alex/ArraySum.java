@@ -1,4 +1,6 @@
-class ArraySum {
+package alex;
+
+public class ArraySum {
 
     private static int[] number;
 
@@ -6,11 +8,11 @@ class ArraySum {
         ArraySum.number = number;
     }
 
-    ArraySum(int[] number) {
+    public ArraySum(int[] number) {
         setNumber(number);
     }
 
-    static int sum(int[] c) {
+    public static int sum(int[] c) {
         if (c == null) {
             throw new NullPointerException();
         }
@@ -21,7 +23,7 @@ class ArraySum {
         return countSum;
     }
 
-    int sum() {
+    public int sum() {
         int countSum = 0;
         for (int i : number) {
             countSum += i;

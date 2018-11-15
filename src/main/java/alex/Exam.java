@@ -1,3 +1,5 @@
+package alex;
+
 import lombok.Getter;//Импортируем библиотеку ламбок (делает для всех геттеры если я не указываю их вручную)
 import lombok.Setter;//Импортируем библиотеку ламбок (делает для всех сеттеры если я не указываю их вручную)
 
@@ -6,7 +8,7 @@ import java.time.Month;
 
 @Getter
 @Setter
-class Exam {
+public class Exam {
     private static final int MIN_SEMESTER = 1;//задаем границы
     private static final int MAX_SEMESTER = 4;//задаем границы
     private static final int MIN_ASSESSMENT = 0;//задаем границы оценки
@@ -18,7 +20,7 @@ class Exam {
     private LocalDate localDate;//сама дата...
     private int semester;
 
-    private void setLocalDate(LocalDate localDate) {
+    boolean setLocalDate(LocalDate localDate) {
         LocalDate oneSemesterEnd = LocalDate.of(2017, 12, 31);//тут короче я добавил границы семестров
         LocalDate twoSemesterStart = LocalDate.of(2018, 1, 1);//чтобы когда я пишу дату оно сразу понимало какой семестр
         LocalDate twoSemesterEnd = LocalDate.of(2018, 6, 30);
@@ -40,10 +42,13 @@ class Exam {
                 this.semester = 4;
             }
             this.localDate = localDate;//присваиваем значение
+            return true;
         } else if (localDate.isAfter(summerStart) && localDate.isBefore(summerEnd)) {//если дата во время каникул
             System.out.println("Summer holidays from 1 JUlY to 31 AUGUST");
+            return false;
         } else {
             System.out.println("Enter correct data from (" + MIN_DATE + ") to (" + MAX_DATE + ")");
+            return false;
         }
     }
 
@@ -63,7 +68,7 @@ class Exam {
 
     @Override
     public String toString() {
-        return "\n Exam{" +
+        return "\n alex.Exam{" +
                 "examName=" + examName +
                 ", assessment=" + assessment +
                 ", localDate=" + localDate +

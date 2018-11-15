@@ -1,8 +1,7 @@
+import alex.ArraySum;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ArraySumTest {
     private static int mas[] = {4,1,5,1,6,1,7,8,4};

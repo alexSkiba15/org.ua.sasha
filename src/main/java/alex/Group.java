@@ -1,13 +1,14 @@
+package alex;
+
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-class Group {
+public class Group {
     private int course;
     private GroupFacultyName groupFacultyName;
     private String nameGroup;
 
-    Group(int course, GroupFacultyName groupFacultyName) {
+    public Group(int course, GroupFacultyName groupFacultyName) {
         setCourse(course);
         setGroupFacultyName(groupFacultyName);
     }

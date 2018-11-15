@@ -1,2 +1,0 @@
-class TheExamDidNotGiveUp extends Throwable {
-}
